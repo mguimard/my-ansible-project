@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - service:
+        name: "{{webserver}}"
+        state: started
+        enabled: true
