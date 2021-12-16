@@ -1,5 +1,5 @@
 - hosts: all
   tasks:
     - debug:
-        var: ma_variable
+        msg: "Installation du paquet {{webserver}}"
         
