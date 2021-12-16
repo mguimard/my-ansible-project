@@ -2,3 +2,7 @@
   tasks:
     - debug:
         var: foo
+    - package:
+        name: "{{foo}}"
+        state: present
+      become: true
