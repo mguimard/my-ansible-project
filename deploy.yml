@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+    - git:
+        repo: "{{repo}}"
+        dest: /var/www/html/website
+        
+        
