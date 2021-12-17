@@ -4,7 +4,7 @@ OS: {{ ansible_os_family }} {{ ansible_distribution }}
 
 Interfaces:
 {% for intf in ansible_interfaces %}
-  - {{ intf }}: {{ ansible_facts[intf].ipv4.adddress }}
+  - {{ intf }}: {{ ansible_facts[intf].ipv4.address }}
 {% endfor %}
 
 Disks:
