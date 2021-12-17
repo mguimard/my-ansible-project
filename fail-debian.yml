@@ -1,4 +1,4 @@
 - hosts: all
   become: true
   tasks:
-    raw: yum update
+    - raw: yum update
