@@ -1,0 +1,8 @@
+- hosts: all
+  roles:
+    - role: geerlingguy.mysql
+      become: true
+        vars:
+          databases:
+            - name: mon-appli
+            - name: ma-conf
