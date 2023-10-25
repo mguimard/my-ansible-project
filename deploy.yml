@@ -7,7 +7,7 @@
 
     - name: Deploy web site
       git:
-        repo: "{{repo}}"
+        repo: "{{repo | default('url ici ...')}}"
         dest: /var/www/html/website
         force: true
         
