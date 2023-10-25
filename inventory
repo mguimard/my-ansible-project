@@ -1,9 +1,6 @@
 [centos]
-centos1 ansible_ssh_host=192.168.56.12
+centos1 ansible_ssh_host=192.168.56.12 repo=https://github.com/seanmiles/example-webpage.git
 
 [debian]
-debian1 ansible_ssh_host=192.168.56.11
-
-[centos:vars]
-repo=https://github.com/seanmiles/example-webpage.git
+debian1 ansible_ssh_host=192.168.56.11 repo=https://github.com/seanmiles/example-webpage.git
 
