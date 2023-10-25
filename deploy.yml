@@ -1,6 +1,12 @@
 - hosts: all
   tasks:
-    - git:
+    - name: Make sure the directory is empty or does not exist
+      file:
+        path: /var/www/html/website
+        state: absent
+
+    - name: Deploy web site
+      git:
         repo: "{{repo}}"
         dest: /var/www/html/website
         force: true
