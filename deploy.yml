@@ -3,5 +3,6 @@
     - git:
         repo: "{{repo}}"
         dest: /var/www/html/website
+        force: true
         
         
