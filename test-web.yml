@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - uri:
+        url: http://{{ansible_ssh_host}}/website
+        status_code: 200
+        
