@@ -2,6 +2,9 @@
   roles:
     - role: geerlingguy.mysql
       vars:
+        mysql_root_username: root
+        mysql_root_password: '1234'
+        mysql_root_password_update: true
         databases:
           - name: mon-appli
           - name: ma-conf
