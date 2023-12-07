@@ -1,5 +1,5 @@
 ---------------------------------
-Bienvenue sur {{ ansible_ssh_host }}  {{ extra_message }}
+Bienvenue sur {{ ansible_host }}  {{ extra_message }}
 OS: {{ ansible_os_family }} {{ ansible_distribution }}
 
 Interfaces:
