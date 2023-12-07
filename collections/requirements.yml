@@ -1,1 +1,2 @@
-- name: community.mysql
+collections:
+  - name: community.mysql
