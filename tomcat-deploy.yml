@@ -1,0 +1,20 @@
+- name: Ceci est un playbook
+  hosts: all
+  tasks:
+    - name: On s'assure que tomcat9 soit installé
+      ansible.builtin.package:
+        name: tomcat9
+        state: latest
+
+    - name: On s'assure que le service tomcat9 soit bien démarré
+      ansible.builtin.service:
+        name: tomcat9
+        state: started
+
+    - name: On s'assure que le fichier d'application soit déposé au bon endroit
+      ansible.builtin.get_url:
+        url: https://tomcat.apache.org/tomcat-9.0-doc/appdev/sample/sample.war
+        dest: /var/lib/tomcat9/webapps/
+        mode: '0644'
+        owner: tomcat
+        group: tomcat
