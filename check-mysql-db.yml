@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - name: On s'assure que la base de donnée 'my-db' soit présente
+      community.mysql.mysql_db:
+        name: my-db
+        state: present
