@@ -1,0 +1,10 @@
+- name: Installation d'un poste user 
+  hosts: all
+  tasks:
+    - name: On s'assure que les paquets démandés soient intallés
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: latest
+      loop: "{{ packages.split('\n') }}"
+
+  
