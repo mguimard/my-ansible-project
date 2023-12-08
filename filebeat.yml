@@ -1,0 +1,32 @@
+- hosts: all
+  vars:
+    filebeat_version: '8.11.2'
+  tasks:
+    - name: On s'assure d'avoir le .deb sur la machine
+      ansible.builtin.get_url:
+        url: "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-{{filebeat_version}}-amd64.deb"
+        dest: "/root/filebeat-{{filebeat_version}}-amd64.deb"
+        mode: '0600'
+
+    - name: On s'assure d'avoir installé le paquet
+      ansible.builtin.apt:
+        deb: "/root/filebeat-{{filebeat_version}}-amd64.deb"
+
+    - name: On s'assure que le service filebeat soit démarré
+      ansible.builtin.service:
+        name: filebeat
+        state: started
+
+    - name: On s'assure de copier notre conf
+      ansible.builtin.template:
+        src: config/filebeat.yml.j2
+        dest: /etc/filebeat/filebeat.yml
+        mode: '0600'
+      notify: restart filebeat
+
+  handlers:
+    - name: restart filebeat
+      ansible.builtin.service:
+        name: filebeat
+        state: restarted
+    
