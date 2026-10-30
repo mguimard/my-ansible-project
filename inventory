@@ -1,2 +1,3 @@
 [debians]
 machine_scaleway ansible_host=51.15.55.147 var1=toto var2=tata
+machine_a_pas_jouer ansible_host=51.15.55.148 var1=toto var2=tata
