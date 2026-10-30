@@ -1,0 +1,6 @@
+- name: Demo de playbook ping
+  hosts: all
+  tasks:
+    - name: Make sure machine is reachable
+      ansible.builtin.ping:
+        data: hello
