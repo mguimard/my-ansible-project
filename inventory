@@ -1,0 +1,2 @@
+[debians]
+machine_scaleway ansible_host=51.15.55.147 var1=toto var2=tata
