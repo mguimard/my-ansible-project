@@ -1,0 +1,6 @@
+- name: Pemo debug
+  hosts: all
+  tasks:
+    - name: Affichage de toutes les variables
+      ansible.builtin.debug:
+        var: vars
