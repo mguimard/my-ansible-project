@@ -1,6 +1,8 @@
 - name: Demo de playbook ping
   hosts: all
+  vars:
+    message: hello
   tasks:
     - name: Make sure machine is reachable
       ansible.builtin.ping:
-        data: hello
+        data: "{{ message }}"
