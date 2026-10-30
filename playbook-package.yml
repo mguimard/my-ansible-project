@@ -1,0 +1,6 @@
+- name: Demo playbook package
+  hosts: all
+  tasks:
+    - name: "Make sure the package is installed: {{ package }}"
+      ansible.builtin.package:
+        name: "{{ package }}"
